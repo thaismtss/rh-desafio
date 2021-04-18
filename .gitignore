@@ -12,6 +12,6 @@ media
 !.travis.yml
 /.env
 /.vscode
-/venv
+/.venv
 /.idea
 /static_in_env

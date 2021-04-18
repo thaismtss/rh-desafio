@@ -1,21 +1,18 @@
 {% extends 'base.html' %}
 
-{% block content %}
-<div class="container">
+{% block content%}
     <div class="py-5 text-center">
-        <h2>Registre-se</h2>
+        <h2>Adicionar Departamento</h2>
     </div>
 
-    <div class="row">
+    <div class="container d-flex justify-content-center" style="padding-top:100px">
         <div class="col align-self-center">
-            <h4 class="mb-3"></h4>
             <form novalidate method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
+
                     {{form.as_p}}
                 <input class="btn btn-primary btn-lg btn-block" type="submit" value="Cadastrar"/>
             </form>
         </div>
     </div>
-</div>
-
 {% endblock content%}

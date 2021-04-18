@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container d-flex justify-content-around" style="padding-top:50px">
+  <h1>Empresas</h1>
+  <a class="btn btn-primary btn-lg active" role="button" aria-pressed="true"
+         href="{% url 'core:company_create'%}" >Adicionar</a>
+</div>
+<div class="container d-flex justify-content-center" style="padding-top:50px">
+ <table class="table table-striped">
+    <thead>
+      <tr>
+        <td>Nome</td>
+        <td>Ações</td>
+      </tr>
+    </thead>
+    <tbody>
+    {% for company in object_list %}
+      <tr>
+          <td>{{ company.name}}</td>
+          <td><a type="button" class="btn btn-secondary"
+                  href="{% url 'core:company_update' pk=company.pk%}">editar</a>
+      </tr>
+     {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock content %}

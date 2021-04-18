@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+
+{% block content %}
+    <div class="container d-flex justify-content-around" style="padding-top:250px">
+        <h1 class="text-center">Rh System</h1>
+        <a class="btn btn-primary btn-lg active" role="button" aria-pressed="true"
+           href="{% url 'core:company' %}">Empresas</a>
+        <a class="btn btn-primary btn-lg active" role="button" aria-pressed="true"
+            href="{% url 'core:department'%}">Departamentos</a>
+        <a class="btn btn-primary btn-lg active" role="button" aria-pressed="true"
+            href="{% url 'core:employee' %}">Colaboradores</a>
+    </div>
+{% endblock content %}

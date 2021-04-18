@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container d-flex justify-content-around" style="padding-top:50px">
+  <h1>Colaboradores</h1>
+  <a class="btn btn-primary btn-lg active" role="button" aria-pressed="true"
+         href="{% url 'core:select_company'%}" >Adicionar</a>
+</div>
+<div class="container d-flex justify-content-center" style="padding-top:50px">
+ <table class="table table-striped">
+    <thead>
+      <tr>
+        <td>Nome</td>
+      </tr>
+    </thead>
+    <tbody>
+    {% for employee in object_list %}
+      <tr>
+          <td>{{ employee.name}}</td>
+      </tr>
+     {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock content %}S

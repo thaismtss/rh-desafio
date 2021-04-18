@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="py-5 text-center">
+        {% for obj in logo %}
+            {% for url in obj%}
+                <img class="d-block mx-auto mb-4" src="http://127.0.0.1:8000/{{url}}" alt="Logo Empresa" width="72" height="72">
+            {% endfor %}
+        {% endfor %}
+
+        <h2>Adicionar Colaborador</h2>
+        {% for obj in company %}
+            {% for a in obj %}
+                 <h3>{{ a }}</h3>
+            {% endfor %}
+        {% endfor %}
+    </div>
+
+    <div class="row">
+
+        <div class="col align-self-center">
+            <h4 class="mb-3">Informações</h4>
+            <form novalidate method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                    {{form.as_p}}
+                <input class="btn btn-primary btn-lg btn-block" type="submit" value="Cadastrar"/>
+            </form>
+        </div>
+    </div>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2017-2020</p>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Privacy</a></li>
+            <li class="list-inline-item"><a href="#">Terms</a></li>
+            <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+    </footer>
+</div>
+
+{% endblock content%}
