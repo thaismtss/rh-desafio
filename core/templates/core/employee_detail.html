@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container" style="padding-top:100px">
+    <h1>{{object.name}}</h1>
+    <h3>Usuário: {{object.user}}</h3>
+    <h3>Sexo: {{object.gender}}</h3>
+    <h3>Telefone: {{object.phone}}</h3>
+    <h3>Idade: {{object.age}}</h3>
+    <h3>Departamento: {{object.department}}</h3>
+    <h3>Salário: {{object.salary}}</h3>
+    <h3>Função: {{object.role}}</h3>
+    <h3>Data de Inicio: {{object.joining_date}}</h3>
+</div>
+
+{% endblock content %}

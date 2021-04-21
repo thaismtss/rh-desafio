@@ -16,7 +16,14 @@
     <tbody>
     {% for employee in object_list %}
       <tr>
-          <td>{{ employee.name}}</td>
+          <td><a href="{% url 'core:employee_detail' pk=employee.pk %}">{{ employee.name}}</a></td>
+          <td>
+              <a type="button" class="btn btn-primary"
+                  href="{% url 'core:employee_update' pk=employee.pk%}">editar</a>
+              <a type="button" class="btn btn-danger"
+                  href="{% url 'core:employee_delete' pk=employee.pk%}">excluir</a>
+
+          </td>
       </tr>
      {% endfor %}
     </tbody>

@@ -3,12 +3,13 @@
 {% block content %}
 <div class="container">
     <div class="py-5 text-center">
-        {% for obj in logo %}
+        <div style="background:grey">
+            {% for obj in logo %}
             {% for url in obj%}
-                <img class="d-block mx-auto mb-4" src="http://127.0.0.1:8000/{{url}}" alt="Logo Empresa" width="72" height="72">
+                <img class="d-block mx-auto mb-4" src="http://127.0.0.1:8000/{{url}}" alt="Logo Empresa" >
             {% endfor %}
         {% endfor %}
-
+        </div>
         <h2>Adicionar Colaborador</h2>
         {% for obj in company %}
             {% for a in obj %}

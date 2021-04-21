@@ -17,9 +17,11 @@
     <tbody>
     {% for company in object_list %}
       <tr>
-          <td>{{ company.name}}</td>
+          <td><a href="{% url 'core:company_detail' pk=company.pk%}">{{ company.name}}</a></td>
           <td><a type="button" class="btn btn-secondary"
                   href="{% url 'core:company_update' pk=company.pk%}">editar</a>
+          <a type="button" class="btn btn-danger"
+                  href="{% url 'core:company_delete' pk=company.pk%}">excluir</a></td>
       </tr>
      {% endfor %}
     </tbody>

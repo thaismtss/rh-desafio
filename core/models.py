@@ -26,6 +26,7 @@ class Company(models.Model):
     def get_absolute_url(self):
         return reverse('core:company')
 
+
 class Department(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
     name = models.CharField(max_length=100, default=None)
@@ -40,6 +41,10 @@ class Department(models.Model):
 
     def __str__(self):
         return str(self.name)
+
+    def get_absolute_url(self):
+        return reverse('core:department')
+
 
 class Employee(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
@@ -73,4 +78,4 @@ class Employee(models.Model):
         return str(self.name)
 
     def get_absolute_url(self):
-        return reverse('/company')
+        return reverse('core:employee')
